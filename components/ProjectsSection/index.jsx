@@ -1,12 +1,91 @@
-import React from 'react'
-import ProjectCard from './ProjectCard'
+import React from 'react';
+import ProjectCard from './ProjectCard';
+
+const projectsData = [
+  {
+    id: 1,
+    title: 'Easy Rent',
+    description:
+      'Interactive MERN Stack Single-Page Application. Tech Used: React, Node, JavaScript, MERN stack, MongoDB, JWT, GraphQL, Nodemailer, Stripe',
+    image: '/images/projectsImages/easy_rent.png',
+    tag: ['All', 'Web'],
+    gitUrl: 'https://github.com/Fredbian/easy-rent',
+    previewUrl: 'https://easy-rent-2022.herokuapp.com/',
+  },
+  {
+    id: 2,
+    title: 'Paws For Homes',
+    description:
+      'Interactive Node-based Full-Stack application following the MVC. Tech Used: Express, Node, Bootstrap, JavaScript, MySQL, ORM, Bcrypt',
+    image: '/images/projectsImages/paws_for_homes.png',
+    tag: ['All', 'Web'],
+    gitUrl: 'https://github.com/Fredbian/paws',
+    previewUrl: 'https://paws-for-home.herokuapp.com/',
+  },
+  {
+    id: 3,
+    title: 'tech_blog',
+    description:
+      'A CMS-style blog site, following the MVC paradigm. Tech Used: JavaScript, MySQL, Node, ORM, Bcrypt',
+    image: '/images/projectsImages/tech_blog.png',
+    tag: ['All', 'Web'],
+    gitUrl:
+      'https://github.com/Fredbian/MONU-FSF-Module-14-Challenge-Tech-Blog',
+    previewUrl: 'https://module-14-tech-blog-fred.herokuapp.com/',
+  },
+  {
+    id: 4,
+    title: 'Cocktail Recipe Finder',
+    description:
+      'A mobile first interactive Front-end application. Tech Used: HTML, CSS, JavaScript, APIs',
+    image: '/images/projectsImages/cocktail_recipe_finder.png',
+    tag: ['All', 'Web'],
+    gitUrl: 'https://github.com/dark40/cocktail-recipe-party-activity',
+    previewUrl: 'https://dark40.github.io/cocktail-recipe-party-activity',
+  },
+  {
+    id: 5,
+    title: 'Travel App',
+    description:
+      'A Front-end Travel Application. Tech Used: React, JavaScript, APIs',
+    image: '/images/projectsImages/travel_app.png',
+    tag: ['All', 'Web'],
+    gitUrl: 'https://github.com/Fredbian/project_travel_app',
+    previewUrl: 'https://rococo-belekoy-25c298.netlify.app',
+  },
+  {
+    id: 6,
+    title: 'Weather Dashboard',
+    description: 'Authentication and CRUD operations',
+    image: '/images/projectsImages/weather_dashboard.png',
+    tag: ['All', 'Web'],
+    gitUrl: 'https://github.com/Fredbian/MONU-FSF-Module-6-Challenge-Weather-Dashboard',
+    previewUrl: 'https://fredbian.github.io/Weather-Dashboard/',
+  },
+];
 
 const ProjectsSection = () => {
   return (
     <div>
-      <h1>My Projects</h1>
+      <h2 className='text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12'>My Projects</h2>
+      <div></div>
+      <div>
+        {projectsData.map((project) => {
+          return (
+            <div key={project.id}>
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                imgUrl={project.image}
+                gitUrl={project.gitUrl}
+                previewUrl={project.previewUrl}
+              />
+            </div>
+          )
+        })}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProjectsSection
+export default ProjectsSection;
