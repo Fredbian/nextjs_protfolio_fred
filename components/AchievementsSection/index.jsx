@@ -1,7 +1,9 @@
 "use client";
 import React from "react";
+// Notes: To import 'react-animated-numbers' package, We need to use dynamic import like below:
+// 1. import 'dynamic'
 import dynamic from "next/dynamic";
-
+// 2. import 'react-animated-numbers' package
 const AnimatedNumbers = dynamic(
   () => {
     return import("react-animated-numbers");
