@@ -1,5 +1,8 @@
-import React from 'react';
+'use client'
+
 import ProjectCard from './ProjectCard';
+import ProjectTag from './ProjectTag';
+import { useState, useRef } from 'react';
 
 const projectsData = [
   {
@@ -59,18 +62,49 @@ const projectsData = [
     description: 'Authentication and CRUD operations',
     image: '/images/projectsImages/weather_dashboard.png',
     tag: ['All', 'Web'],
-    gitUrl: 'https://github.com/Fredbian/MONU-FSF-Module-6-Challenge-Weather-Dashboard',
+    gitUrl:
+      'https://github.com/Fredbian/MONU-FSF-Module-6-Challenge-Weather-Dashboard',
     previewUrl: 'https://fredbian.github.io/Weather-Dashboard/',
   },
 ];
 
 const ProjectsSection = () => {
+  const [tag, setTag] = useState('All');
+  // const ref = useRef(null);
+  // const isInView = useInView(ref, { once: true });
+
+  const handleTagChange = (newTag) => {
+    setTag(newTag);
+  };
+
+  const filteredProjects = projectsData.filter((project) =>
+    project.tag.includes(tag)
+  );
+
   return (
     <div>
-      <h2 className='text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12'>My Projects</h2>
-      <div></div>
-      <div>
-        {projectsData.map((project) => {
+      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
+        My Projects
+      </h2>
+      <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
+        <ProjectTag
+          onClick={handleTagChange}
+          name="All"
+          isSelected={tag === 'All'}
+        />
+        <ProjectTag
+          onClick={handleTagChange}
+          name="Web"
+          isSelected={tag === 'Web'}
+        />
+        <ProjectTag
+          onClick={handleTagChange}
+          name="Mobile"
+          isSelected={tag === 'Mobile'}
+        />
+      </div>
+      <div className='grid md:grid-cols-3 gap-8 md:gap-12'>
+        {filteredProjects.map((project) => {
           return (
             <div key={project.id}>
               <ProjectCard
@@ -81,7 +115,7 @@ const ProjectsSection = () => {
                 previewUrl={project.previewUrl}
               />
             </div>
-          )
+          );
         })}
       </div>
     </div>
