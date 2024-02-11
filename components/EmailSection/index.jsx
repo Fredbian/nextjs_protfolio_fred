@@ -8,13 +8,9 @@ import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const emailServiceId = process.env.EMAIL_SERVICES_ID
-const emailTemplateId = process.env.EMAIL_TEMPLATE_ID
-const emailPublicKey = process.env.EMAIL_PUBLIC_KEY
 
 
 const EmailSection = () => {
-  const [emailSubmitted, setEmailSubmitted] = useState(false);
 
   const form = useRef();
 
@@ -30,11 +26,11 @@ const EmailSection = () => {
     e.preventDefault();
     emailjs
       .sendForm(
-        emailServiceId,
-        emailTemplateId,
+        process.env.NEXT_PUBLIC_EMAIL_SERVICES_ID,
+        process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID,
         form.current,
         {
-          publicKey: emailPublicKey,
+          publicKey: process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY,
         }
       )
       .then(
