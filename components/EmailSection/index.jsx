@@ -1,5 +1,6 @@
 'use client';
-import React, { useState, useRef } from 'react';
+
+import React, { useRef } from 'react';
 import GithubIcon from '../../public/github-icon.svg';
 import LinkedinIcon from '../../public/linkedin-icon.svg';
 import Link from 'next/link';
@@ -9,9 +10,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-
 const EmailSection = () => {
-
   const form = useRef();
 
   const successMsg = () => {
@@ -48,13 +47,13 @@ const EmailSection = () => {
 
   return (
     <>
-      <ToastContainer position='top-right' />
+      <ToastContainer position="top-right" />
       <section
         id="contact"
         className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative"
       >
-        <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-600 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
-        <div className="z-10">
+        {/* <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-600 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div> */}
+        <div className="">
           <h5 className="text-xl font-bold text-white my-2">
             Let&apos;s Connect
           </h5>
