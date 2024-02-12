@@ -24,6 +24,18 @@ const HeroSection = () => {
     window.location.href = mailtoLink;
   };
 
+  const handleDownload = () => {
+    const pdfFilePath = '/resume_2024.pdf';
+
+    const anchor = document.createElement('a');
+    anchor.href = pdfFilePath;
+    anchor.download = 'your-file.pdf';
+
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
+  }
+
   return (
     <section className="lg:py-16">
       <div className="grid grid-cols-1 sm:grid-cols-12">
@@ -67,7 +79,10 @@ const HeroSection = () => {
             >
               Hire Me
             </button>
-            <button className="px-1 py-1 w-full sm:w-fit rounded-full bg-transparent hover:bg-slate-800 text-white mt-3 bg-gradient-to-br from-primary-600 via-secondary to-Tertiary">
+            <button 
+            onClick={handleDownload}
+            className="px-1 py-1 w-full sm:w-fit rounded-full bg-transparent hover:bg-slate-800 text-white mt-3 bg-gradient-to-br from-primary-600 via-secondary to-Tertiary"
+            >
               <span className="block font-semibold bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2 ">
                 Resume <ArrowDownTrayIcon className="w-5 inline pb-1" />
               </span>

@@ -4,7 +4,6 @@ import ProjectCard from './ProjectCard';
 import ProjectTag from './ProjectTag';
 import { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import useScreenSize from '@/app/hooks/useScreenSize';
 
 const projectsData = [
   {
@@ -29,6 +28,16 @@ const projectsData = [
   },
   {
     id: 3,
+    title: 'Travel App',
+    description:
+      'A Front-end Travel Application. Tech Used: React, JavaScript, APIs',
+    image: '/images/projectsImages/travel_app.png',
+    tag: ['All', 'Web'],
+    gitUrl: 'https://github.com/Fredbian/project_travel_app',
+    previewUrl: 'https://rococo-belekoy-25c298.netlify.app',
+  },
+  {
+    id: 4,
     title: 'Tech Blog',
     description:
       'A CMS-style blog site, following the MVC paradigm. Tech Used: JavaScript, MySQL, Node, ORM, Bcrypt',
@@ -39,7 +48,7 @@ const projectsData = [
     previewUrl: 'https://module-14-tech-blog-fred.herokuapp.com/',
   },
   {
-    id: 4,
+    id: 5,
     title: 'Cocktail Recipe Finder',
     description:
       'A mobile first interactive Front-end application. Tech Used: HTML, CSS, JavaScript, APIs',
@@ -47,16 +56,6 @@ const projectsData = [
     tag: ['All', 'Web'],
     gitUrl: 'https://github.com/dark40/cocktail-recipe-party-activity',
     previewUrl: 'https://dark40.github.io/cocktail-recipe-party-activity',
-  },
-  {
-    id: 5,
-    title: 'Travel App',
-    description:
-      'A Front-end Travel Application. Tech Used: React, JavaScript, APIs',
-    image: '/images/projectsImages/travel_app.png',
-    tag: ['All', 'Web'],
-    gitUrl: 'https://github.com/Fredbian/project_travel_app',
-    previewUrl: 'https://rococo-belekoy-25c298.netlify.app',
   },
   {
     id: 6,
@@ -91,7 +90,6 @@ const ProjectsSection = () => {
     project.tag.includes(tag)
   );
 
-  const ScreenWidth = useScreenSize().width
 
   return (
     <section id='projects'>
