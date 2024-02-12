@@ -4,6 +4,7 @@ import ProjectCard from './ProjectCard';
 import ProjectTag from './ProjectTag';
 import { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import useScreenSize from '@/app/hooks/useScreenSize';
 
 const projectsData = [
   {
@@ -28,7 +29,7 @@ const projectsData = [
   },
   {
     id: 3,
-    title: 'tech_blog',
+    title: 'Tech Blog',
     description:
       'A CMS-style blog site, following the MVC paradigm. Tech Used: JavaScript, MySQL, Node, ORM, Bcrypt',
     image: '/images/projectsImages/tech_blog.png',
@@ -90,6 +91,8 @@ const ProjectsSection = () => {
     project.tag.includes(tag)
   );
 
+  const ScreenWidth = useScreenSize().width
+
   return (
     <section id='projects'>
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
@@ -112,7 +115,7 @@ const ProjectsSection = () => {
           isSelected={tag === 'Mobile'}
         />
       </div>
-      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
+      <ul ref={ref} className={`grid md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-20`}>
         {filteredProjects.map((project, index) => {
           return (
             <motion.li

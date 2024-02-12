@@ -7,9 +7,22 @@ import { motion } from 'framer-motion';
 import './index.css';
 import ReactCurvedText from 'react-curved-text';
 import useScreenSize from '@/app/hooks/useScreenSize';
+import { ArrowDownTrayIcon } from '@heroicons/react/24/solid';
 
 const HeroSection = () => {
   const ScreenWidth = useScreenSize().width;
+
+  const handleHireMe = () => {
+    const subject = '';
+    const body = '';
+
+    const mailtoLink = `mailto:biantao0519@hotmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
+    // Open the user's default email client
+    window.location.href = mailtoLink;
+  };
 
   return (
     <section className="lg:py-16">
@@ -41,23 +54,22 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] sm:text-lg mb-6 lg:text-xl">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat
-            distinctio omnis sed dolor recusandae est tempore ab, dignissimos
-            consequatur debitis cum temporibus ut molestiae nesciunt vitae
-            blanditiis dolorum dolores error.
+            As a full-stack developer, I am dedicated to turning ideas into
+            innovative web applications. Explore myh latest projects, showcasing
+            my expertise in software development.
           </p>
           {/* TEST */}
-          <p className="text-white">Width: {ScreenWidth}</p>
+          {/* <p className="text-white">Width: {ScreenWidth}</p> */}
           <div>
-            <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 hover:bg-gradient-to-tl bg-gradient-to-br from-primary-600 via-secondary to-Tertiary hover:bg-slate-200 text-white">
+            <button
+              onClick={handleHireMe}
+              className="px-6 font-semibold py-3 w-full sm:w-fit rounded-full mr-4 hover:bg-gradient-to-tl bg-gradient-to-br from-primary-600 via-secondary to-Tertiary hover:bg-slate-200 text-white"
+            >
               Hire Me
             </button>
-            {/* <div className='fixed bottom-2 left-2'>
-              <RotatingCurvedText />
-            </div> */}
             <button className="px-1 py-1 w-full sm:w-fit rounded-full bg-transparent hover:bg-slate-800 text-white mt-3 bg-gradient-to-br from-primary-600 via-secondary to-Tertiary">
-              <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2 ">
-                Download CV
+              <span className="block font-semibold bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2 ">
+                Resume <ArrowDownTrayIcon className="w-5 inline pb-1" />
               </span>
             </button>
           </div>
