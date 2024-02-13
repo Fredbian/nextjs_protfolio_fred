@@ -76,7 +76,7 @@ const EmailSection = () => {
           <form ref={form} className="flex flex-col" onSubmit={handleSubmit}>
             <div className="mb-6">
               <label
-                htmlFor="email"
+                htmlFor="user_email"
                 className="text-white block mb-2 text-sm font-medium"
               >
                 Your email
@@ -92,7 +92,7 @@ const EmailSection = () => {
             </div>
             <div className="mb-6">
               <label
-                htmlFor="subject"
+                htmlFor="user_name"
                 className="text-white block text-sm mb-2 font-medium"
               >
                 Your Name

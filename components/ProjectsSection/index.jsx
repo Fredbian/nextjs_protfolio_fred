@@ -113,7 +113,7 @@ const ProjectsSection = () => {
           isSelected={tag === 'Mobile'}
         />
       </div>
-      <ul ref={ref} className={`grid md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-20`}>
+      <ul ref={ref} className={`grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-20`}>
         {filteredProjects.map((project, index) => {
           return (
             <motion.li

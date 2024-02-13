@@ -1,16 +1,19 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import NavLink from './NavLink';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 import MenuOverlay from './MenuOverlay';
 import { Black_Ops_One } from 'next/font/google';
+import GithubIcon from '../../public/github-icon.svg';
+import LinkedinIcon from '../../public/linkedin-icon.svg';
 
 const black_ops = Black_Ops_One({
   subsets: ['latin'],
-  weight: '400'
-})
+  weight: '400',
+});
 
 const navLinks = [
   {
@@ -69,7 +72,14 @@ const Navbar = () => {
         >
           Fred
         </Link>
-        <p className={`text-white text-center flex-1`}>Test Font</p>
+        <div className="flex-1 flex flex-row gap-2 justify-center">
+          <Link href="https://github.com/Fredbian">
+            <Image src={GithubIcon} alt="Github Icon" />
+          </Link>
+          <Link href="https://www.linkedin.com/in/tao-bian-9aa137239/">
+            <Image src={LinkedinIcon} alt="Linkedin Icon" />
+          </Link>
+        </div>
       </div>
       {navbarOpen && <MenuOverlay links={navLinks} />}
     </nav>
