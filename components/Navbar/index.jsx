@@ -73,10 +73,10 @@ const Navbar = () => {
           Fred
         </Link>
         <div className="flex-1 flex flex-row gap-2 justify-center">
-          <Link href="https://github.com/Fredbian">
+          <Link href="https://github.com/Fredbian" target="_blank">
             <Image src={GithubIcon} alt="Github Icon" />
           </Link>
-          <Link href="https://www.linkedin.com/in/tao-bian-9aa137239/">
+          <Link href="https://www.linkedin.com/in/tao-bian-9aa137239/" target="_blank">
             <Image src={LinkedinIcon} alt="Linkedin Icon" />
           </Link>
         </div>
