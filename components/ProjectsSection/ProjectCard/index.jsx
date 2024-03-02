@@ -1,5 +1,5 @@
-import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
-import Link from "next/link";
+import { CodeBracketIcon, EyeIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 
 const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
   return (
@@ -8,8 +8,8 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
         className="h-52 md:h-72 md:w-auto rounded-t-xl relative group min-w-[360px] max-w-[400px]"
         style={{ background: `url(${imgUrl})`, backgroundSize: 'cover' }}
       >
-        <div className='absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex justify-center items-center group-hover:bg-opacity-80 transition-all duration-500'>
-        <Link
+        <div className="absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex justify-center items-center group-hover:bg-opacity-80 transition-all duration-500">
+          <Link
             href={gitUrl}
             target="_blank"
             className="h-14 w-14 mr-2 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link"
@@ -27,7 +27,7 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
       </div>
       <div className="text-white min-h-[190px] max-w-[400px] min-w-[360px] rounded-b-xl mt-3 bg-[#181818] py-6 px-4">
         <h5 className="text-xl font-semibold mb-2">{title}</h5>
-        <p className="text-[#ADB7BE] truncate">{description}</p>
+        <p className="text-[#ADB7BE] break-words">{description}</p>
       </div>
     </div>
   );
