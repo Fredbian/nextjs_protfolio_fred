@@ -38,14 +38,14 @@ const projectsData = [
   },
   {
     id: 4,
-    title: 'Tech Blog',
+    title: 'Fun Blog',
     description:
-      'A CMS-style blog site, following the MVC paradigm. Tech Used: JavaScript, MySQL, Node, ORM, Bcrypt',
-    image: '/images/projectsImages/tech_blog.png',
+      'Full-stack blog project, where Next.js and React combine to deliver a lightning-fast, responsive user interface. Leveraging MongoDB and Prisma for efficient data management',
+    image: '/images/projectsImages/nextjs_blog.png',
     tag: ['All', 'Web'],
     gitUrl:
-      'https://github.com/Fredbian/MONU-FSF-Module-14-Challenge-Tech-Blog',
-    previewUrl: 'https://module-14-tech-blog-fred.herokuapp.com/',
+      'https://github.com/Fredbian/nextjs_blog',
+    previewUrl: 'https://nextjs-blog-zeta-eight-80.vercel.app/',
   },
   {
     id: 5,
